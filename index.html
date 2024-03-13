@@ -1,0 +1,236 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lamp Document</title>
+        <link rel="stylesheet" href="lib/fontawesome-free-6.5.1-web/css/all.css">
+        <link rel="stylesheet" href="./styles/styles.css">
+    </head>
+    <body class="g-base", id="container">
+        <main id="p-main">
+            <nav>
+                <div class="wrapper">
+                    <div class="logo"><a href="#">LAMP Documentation</a></div>
+                    <input type="radio" name="slider" id="menu-btn">
+                    <input type="radio" name="slider" id="close-btn">
+                    <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <li><a href="#p-main-step-1">Step-1</a></li>
+                    <li><a href="#p-main-step-2">Step-2</a></li>
+                    <li>
+                        <a href="#p-main-step-3" class="desktop-item">Step-3</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                        <ul class="drop-menu">
+                        <li><a href="#p-main-step-3-a">How to add a new user</a></li>
+                        <li><a href="#p-main-step-3-b">New Database to MySQL / Grant Privileges</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#p-main-step-4">Configure vhost</a></li>
+                    <li><a href="#p-main-step-5">Test LAMP STACK</a></li>
+                    </ul>
+                    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+                </div>
+            </nav>
+            <section id="p-main-step-1"><a href="#p-main">
+                <h2>1.  How to Install Apache</h2></a>
+                <!-- <p> -->
+                    Installing Apache and Updating.
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Before Installing the Apache first <b>Update the package index</b> by inserting folloing command:
+                            <ul>
+                                <li><code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apt update</code></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Now Install Apache by firing below command:
+                            <ul>
+                                <li>
+                                    <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apt install apache2</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Start Apache using below command:
+                            <ul>
+                                <li>
+                                    <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo systemctl start apache2</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                <!-- </p> -->
+            </section>
+            <section id="p-main-step-2"><a href="#p-main">
+                <h2>2.  How to install PHP v8.2</h2></a>
+                <!-- <p> -->
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Before Installing the PHP v8.2 first <b>Update the package index</b> by inserting folloing command:
+                            <ul>
+                                <li>
+                                    <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apt update</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Install PHP v8.2:
+                            <ul>
+                                <li>
+                                    <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apt install php8.2</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Verify PHP installed and the version.
+                            <ul>
+                                <li>
+                                    <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;php -v</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                <!-- </p> -->
+            </section>
+            <section id="p-main-step-3"><a href="#p-main">
+                <h2>3.  How to install MySQL</h2></a>
+                <!-- <p> -->
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Install MySQL:
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apt install mysql-server</code>
+                            </li>
+                        </ul>
+                    </ul>
+                    <div id="p-main-step-3-a">
+                        <a href="#p-main"><h3>a.  How to add a new user</h3></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Access MySql:
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo mysql</code>
+                            </li>
+                        </ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;After getting inside MYSQL: Now you can create new user:
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';</code>
+                            </li>
+                        </ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Grant privileges to the USER:
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;<br>
+                                    <i class="fa-solid fa-terminal fa-fade"></i>&nbsp;FLUSH PRIVILEGES;</code>
+                            </li>
+                        </ul>
+                    </ul>
+                <!-- </p> -->
+                <!-- <p> -->
+                    <div id="p-main-step-3-b">
+                        <a href="#p-main"><h3>b.  How to add a new database to MySQL and give a user permission to that database.</h3></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Create New DATABASE
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;CREATE DATABASE dbname;</code>
+                            </li>
+                        </ul>
+                        <li>
+                            <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Grant Preivileges to the User to newly created database
+                        </li>
+                        <ul>
+                            <li>
+                                <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost';<br>
+                                    <i class="fa-solid fa-terminal fa-fade"></i>&nbsp;FLUSH PRIVILEGES;</code>
+                            </li>
+                        </ul>
+                    </ul>
+                <!-- </p> -->
+            </section>
+            <section id="p-main-step-4"><a href="#p-main">
+                <h2>4.  How to configure a vhost in Apache</h2></a>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Create a new vhost configuration file:
+                    </li>
+                    <ul>
+                        <li>
+                            <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo nano /etc/apache2/sites-available/example.com.conf</code>
+                        </li>
+                    </ul>
+                    <li>
+                        <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Enable the vhost
+                    </li>
+                    <ul>
+                        <li>
+                            <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo a2ensite example.com.conf</code>
+                        </li>
+                    </ul>
+                    <li>
+                        <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Test the configuration
+                    </li>
+                    <ul>
+                        <li>
+                            <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo apache2ctl configtest</code>
+                        </li>
+                        <li>
+                            <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo systemctl restart apache2</code>
+                        </li>
+                    </ul>
+                    <li>
+                        <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;View Apache logs
+                    </li>
+                    <ul>
+                        <li>
+                            <code><i class="fa-solid fa-terminal fa-fade"></i>&nbsp;sudo tail -f /var/log/apache2/error.log</code>
+                        </li>
+                    </ul>
+                </ul>
+            </section>
+            <section id="p-main-step-5"><a href="#p-main">
+                <h2>5.  How to test that your LAMP stack is working</h2></a>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-circle fa-fade fa-flip-horizontal fa-2xs"></i>&nbsp;Create a test PHP File
+                    </li>
+                    <ul>
+                        <li>
+                            <!-- <code> -->
+                                <i class="fa-brands fa-php"></i>&nbsp;Add index.php<br>
+                                <i class="fa-brands fa-php"></i>&nbsp;Inside that file add below code.<br>
+                            <code>
+                            &lt;?php<br>
+                            // create connection - host, username, password, database<br><br>
+                            $mysqli = new mysqli("localhost", "challenge", "secret", "challengeDB");<br><br>
+                            if ($mysqli->connect_errno) {<br>
+                            &nbsp;&nbsp;&nbsp;echo "Failed to connect to MySQL: " . $mysqli->connect_error;<br>
+                            &nbsp;&nbsp;&nbsp;exit();<br>
+                            }<br><br>
+                            echo "Connected successfully to MySQL";<br>
+                            $mysqli->close();</code>
+                            <img src="./images/php.png">
+                        </li>
+                    </ul>
+                </ul>
+            </section>
+            <div id="link-page">
+                <a href="#p-main"><i class="fa-solid fa-arrows-up-to-line fa-bounce fa-2xl"></i><i class="fa-solid fa-arrows-up-to-line fa-bounce fa-2xl"></i></a>
+            </div>
+        </main>
+    </body>
+</html>
